@@ -1,0 +1,68 @@
+{
+  "name": "Interactiondemo",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^5.8.2",
+    "@sap/hdbext": "^7.6.0",
+    "@sap/xssec": "^3.2.13",
+    "applicationinsights": "^2.2.2",
+    "express": "^4.17.3",
+    "hana-cli": "^3.202202.1",
+    "hdb": "^0.18.3",
+    "passport": "^0.5.2",
+    "sap-hdbext-promisfied": "^2.202202.1"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.2",
+    "node": "^17.5.0"
+  },
+  "scripts": {
+    "start": "cds run"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es2020": true,
+      "node": true,
+      "jest": true,
+      "mocha": true
+    },
+    "globals": {
+      "SELECT": true,
+      "INSERT": true,
+      "UPDATE": true,
+      "DELETE": true,
+      "CREATE": true,
+      "DROP": true,
+      "CDL": true,
+      "CQL": true,
+      "CXL": true,
+      "cds": true
+    },
+    "rules": {
+      "no-console": "off",
+      "require-atomic-updates": "off"
+    }
+  },
+  "cds": {
+    "requires": {
+      "auth": {
+        "kind": "dummy-auth"
+      },
+      "db": {
+        "kind": "hana"
+      },
+      "uaa": {
+        "kind": "xsuaa",
+        "credentials": {}
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  }
+}
